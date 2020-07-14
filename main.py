@@ -39,18 +39,18 @@ def format(txt_format, txt_ignore):
 
 # Lifecycle of program
 if __name__ == '__main__':
-    format()
+    # format()
 
-    # command = sys.argv[1]
-    #
-    # # statement to follow commands
-    # if(command == "help"):
-    # 	help()
-    # elif(command == "format"):
-    # 	txt_format = sys.argv[2]
-    # 	txt_ignore = sys.argv[3]
-    #
-    # 	format(txt_format, txt_ignore)
+    command = sys.argv[1]
+
+    # statement to follow commands
+    if(command == "help"):
+    	help()
+    elif(command == "format"):
+    	txt_format = sys.argv[2]
+    	txt_ignore = sys.argv[3]
+
+    	format(txt_format, txt_ignore)
 
     for x in txt_list:
         print(x)
