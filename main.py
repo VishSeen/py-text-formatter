@@ -1,8 +1,10 @@
+# --------------------- #
 # Simple Text Formatter #
-
+# --------------------- #
 
 import sys
 
+# global list
 txt_list = []
 
 
@@ -15,11 +17,13 @@ def help():
 def format(txt_format, txt_ignore):
     index = 0
     txt_ignore_len = len(txt_ignore)
-    txt_ignore_count = txt_format.count(txt_ignore)
+    txt_ignore_count = txt_format.count(txt_ignore) # count number of txt to ignore
 
+    # while txt to format has txt to ignore, format txt
     while txt_ignore_count > 0:
         txt_ignore_count = txt_format.count(txt_ignore)
 
+        # take in first letter to position of txt to ignore and add to list
         if txt_ignore_count > 0:
             txt_ignore_pos = txt_format.index(txt_ignore)
             txt_formatted = txt_format[index:txt_ignore_pos]
@@ -39,18 +43,17 @@ def format(txt_format, txt_ignore):
 
 # Lifecycle of program
 if __name__ == '__main__':
-    # format()
-
+    # command to know what to run
     command = sys.argv[1]
 
     # statement to follow commands
-    if(command == "help"):
-    	help()
-    elif(command == "format"):
-    	txt_format = sys.argv[2]
-    	txt_ignore = sys.argv[3]
+    if (command == "help"):
+        help()
+    elif (command == "format"):
+        txt_format = sys.argv[2]
+        txt_ignore = sys.argv[3]
 
-    	format(txt_format, txt_ignore)
+        format(txt_format, txt_ignore)
 
     for x in txt_list:
         print(x)
