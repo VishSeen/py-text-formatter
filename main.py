@@ -1,7 +1,12 @@
 # --------------------- #
 # Simple Text Formatter #
 # --------------------- #
+# script to format text.
+# add text to format
+# precise which character to remove in between
+# words formatted will be added in txt_list
 
+# --------------------- #
 import sys
 
 # global list
@@ -20,11 +25,11 @@ def format(txt_format, txt_ignore):
     txt_ignore_count = txt_format.count(txt_ignore) # count number of txt to ignore
 
     # while txt to format has txt to ignore, format txt
-    while txt_ignore_count > 0:
+    while (txt_ignore_count > 0):
         txt_ignore_count = txt_format.count(txt_ignore)
 
         # take in first letter to position of txt to ignore and add to list
-        if txt_ignore_count > 0:
+        if (txt_ignore_count > 0):
             txt_ignore_pos = txt_format.index(txt_ignore)
             txt_formatted = txt_format[index:txt_ignore_pos]
             index = txt_ignore_pos + txt_ignore_len
